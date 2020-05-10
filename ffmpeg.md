@@ -1,6 +1,7 @@
 # FFMPEG
 
 > Source: <http://slhck.info/ffmpeg-encoding-course/>
+> Source: <https://github.com/leandromoreira/ffmpeg-libav-tutorial#intro>
 
 ```bash
 $ ffmpeg \
@@ -61,4 +62,13 @@ JSON Format:
 
 ```bash
 ffprobe bunny_1080p_60fps.mkv -select_streams v -show_packets -of json | jq
+```
+
+## Common video operations
+
+```bash
+ffmpeg \
+-i bunny_1080p_60fps.mp4 \
+-c:v libx265 \
+bunny_1080p_60fps_h265.mp4
 ```
